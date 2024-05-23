@@ -15,4 +15,4 @@ export const routes: Routes = [
   // ... spread operator ile bir array içindeki tüm elemanlarını tek tek ilgili yere yerleştirir..
   ...productsRoutes,
   ...categoriesRoutes
-];
+]; 
