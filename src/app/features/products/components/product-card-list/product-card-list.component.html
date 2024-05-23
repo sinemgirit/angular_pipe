@@ -1,0 +1,22 @@
+@if(productList){
+<div class="row">
+  @for (product of productList.items; track $index) {
+  <app-card
+    [title]="product.name | uppercase"
+    [buttonLabel]="'View - ' + (product.unitPrice | appVat : 19 | currency)"
+    (buttonClick)="onViewProduct(product)"
+    [description]="product.quantityPerUnit"
+    [imageSrc]="product.imageUrl"
+    [imageAlt]="product.name"
+    class="col-12 col-md-6 col-lg-4 my-2"
+  ></app-card>
+  }
+
+  <app-pagination
+    [page]="productList.pageIndex"
+    [pageSize]="productList.pageSize"
+    [totalItemCount]="productList.totalItems"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</div>
+}
